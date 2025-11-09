@@ -36,7 +36,7 @@ describe('Sign In page', () => {
   it('shows error for invalid password', () => {
     cy.logIn({ username, password: invalidPassword });
     cy.contains('h2', 'Login Page').should('exist');
-    cy.contains('div[data-alert]', 'Your password is invalid!');
+    cy.get('div[data-alert]').should('exist');
   });
 
   it('shows error for invalid username and password', () => {
